@@ -1,0 +1,62 @@
+@import "_tools";
+
+.cbalink {visibility: hidden;} //Should be removed before production
+
+* {
+box-sizing: border-box;
+    &::selection {
+	background: $login_bg;
+    color: white;
+	}
+	img::selection {
+	background: none;
+	}
+}
+
+body {
+	font: 14px 'Open Sans', sans-serif;
+	color: $black;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul, ol {
+	list-style: none;
+	padding: 0;
+}
+
+label {
+	@extend %pointer;
+}
+
+input:not([type="checkbox"]) {
+	border: 2px solid #d7d7d7;
+	border-radius: 10px;
+	background: white;
+	box-shadow: inset 0px 1px 3px 0px rgba(123, 123, 123, 0.3);
+	padding: 0 2em;
+	font-family: inherit;
+	line-height: 3.5em;
+	outline: none;
+}
+
+button {
+	padding: 0 2em;
+	line-height: 3.5em;
+	font-family: inherit;
+	font-size: inherit;
+	text-transform: uppercase;
+	cursor: pointer;
+	outline: none;
+	@include rounded_element($border: none, $radius: 10px, $background: transparent, $color: $black);
+	&.yellow {
+		background: $yellow;
+	}
+	&.violet {
+		background: $violet;
+		color: white;
+	}
+}
+

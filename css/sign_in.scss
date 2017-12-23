@@ -1,0 +1,67 @@
+@import "_tools";
+
+.decore {
+    order: 1;
+}
+
+
+.decore + section {
+	h3 {
+		font-size: 1.8em;
+    	font-weight: 300;
+    	@extend %m0;
+	}
+	div {
+		margin-top: 8em;
+		@extend %flex;
+	}
+}
+
+.wide {width:100%}
+
+.helpers {
+	color: $violet;
+	display: table;
+	@extend .wide;
+	& > * {
+		display: table-cell;
+	}
+	span {
+		text-align: right;
+	}
+}
+
+a.violet {
+	@extend %inline-block;
+	text-transform: uppercase;
+	padding: 0 2em;
+	line-height: 3.5;
+	@include rounded_element($border: none, $radius: 10px, $background: $violet, $color: white);
+}
+
+.socials {
+margin-left: 8%;
+@extend %inline-block;
+@extend %m0;
+	li {
+	@extend %inline-block;
+		&+li {
+			margin-left: 1em;
+		}
+	}
+	a {
+		background: url(../img/icons_sprite.svg) no-repeat center top/cover;
+		width: 3em;
+		height: 3em;
+		border-radius: 50%;
+		@extend %block;
+	}
+}
+
+.fb a {
+	background-position-y: 50%;
+}
+
+.gp a {
+	background-position-y: 100%;
+}
