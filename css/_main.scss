@@ -1,12 +1,18 @@
 @import "_tools";
 
-.cbalink {visibility: hidden;} //Should be removed before production
-
 * {
-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    &::-moz-selection {
+	background: $login_bg;
+    color: white;
+	}
     &::selection {
 	background: $login_bg;
     color: white;
+	}
+	img::-moz-selection {
+	background: none;
 	}
 	img::selection {
 	background: none;
@@ -16,15 +22,16 @@ box-sizing: border-box;
 body {
 	font: 14px 'Open Sans', sans-serif;
 	color: $black;
+	@extend %p0;
+	@extend %m0;
 }
 
-a {
-	text-decoration: none;
-}
+a {	text-decoration: none; }
 
 ul, ol {
 	list-style: none;
-	padding: 0;
+	margin: 1em 0;
+	@extend %p0;
 }
 
 label {
@@ -35,7 +42,8 @@ input:not([type="checkbox"]) {
 	border: 2px solid #d7d7d7;
 	border-radius: 10px;
 	background: white;
-	box-shadow: inset 0px 1px 3px 0px rgba(123, 123, 123, 0.3);
+	-webkit-box-shadow: inset 0px 1px 3px 0px rgba(123, 123, 123, 0.3);
+	        box-shadow: inset 0px 1px 3px 0px rgba(123, 123, 123, 0.3);
 	padding: 0 2em;
 	font-family: inherit;
 	line-height: 3.5em;
@@ -47,10 +55,10 @@ button {
 	line-height: 3.5em;
 	font-family: inherit;
 	font-size: inherit;
-	text-transform: uppercase;
+	@extend %uppercase;
 	cursor: pointer;
 	outline: none;
-	@include rounded_element($border: none, $radius: 10px, $background: transparent, $color: $black);
+	@include rounded_element($border: none, $radius: 10px, $background: "", $color: $black);
 	&.yellow {
 		background: $yellow;
 	}
@@ -60,3 +68,12 @@ button {
 	}
 }
 
+.wide {width:100%}
+
+.success {
+	background-color: $success_color;
+}
+
+.fail {
+	background-color: $fail_color;
+}

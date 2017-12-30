@@ -2,13 +2,15 @@
 
 .wrapper {
 	@extend %flex;
-	position: absolute;
+	@extend %pos-abs;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	section {
-		flex: 1 0 50%;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 50%;
+		        flex: 1 0 50%;
 	}
 }
 

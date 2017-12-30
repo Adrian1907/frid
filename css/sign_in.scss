@@ -1,7 +1,9 @@
 @import "_tools";
 
 .decore {
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
 }
 
 .decore + section {
@@ -15,8 +17,6 @@
 		@extend %flex;
 	}
 }
-
-.wide {width:100%}
 
 .helpers {
 	color: $violet;
@@ -32,10 +32,10 @@
 
 a.violet {
 	@extend %inline-block;
-	text-transform: uppercase;
+	@extend %uppercase;
 	padding: 0 2em;
 	line-height: 3.5;
-	@include rounded_element($border: none, $radius: 10px, $background: $violet, $color: white);
+	@include rounded_element($border: "", $radius: 10px, $background: $violet, $color: white);
 }
 
 .socials {

@@ -3,6 +3,10 @@ $yellow: #fbd303;
 $violet: #3b0086;
 $black: #252525;
 $grey: #b7b7b7;
+$success_color: #30e030;
+$fail_color: #d20404;
+
+$base-side-padding: 7%;
 
 @function calcFluidSize($f-min, $f-max, $v-min, $v-max, $units: px) {
   $k: ($f-max - $f-min)/($v-max - $v-min);
@@ -12,23 +16,32 @@ $grey: #b7b7b7;
 }
 
 @mixin rounded_element($border, $radius: 10px, $background: white, $color: $black) {
-	border: $border;
-	-webkit-border-radius: $radius;
-	 -moz-border-radius: $radius;
-	  -ms-border-radius: $radius;
-	      border-radius: $radius;
-	background-color: $background;
-	color:  $color;
+	@if $border != "" { border: $border; }
+	@if $radius != "" { border-radius: $radius; }
+	@if $background != "" {	background-color: $background; }
+	@if $color != "" { color:  $color; }
 }
 
 %m0 { margin: 0; }
+
+%p0 { padding: 0; }
 
 %inline-block {	display: inline-block; }
 
 %block { display: block; }
 
-%flex { display: flex; }
+%flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
 
 %pointer {
 	cursor: pointer;
 }
+
+%uppercase { text-transform: uppercase; }
+%text-center { text-align: center; }
+
+%pos-rel { position: relative; }
+%pos-abs { position: absolute; }

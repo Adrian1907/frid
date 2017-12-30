@@ -1,0 +1,20 @@
+@import "_main", "_header";
+
+.hints {
+	max-width: 35%;
+    margin: 1em auto;
+    line-height: 3.5;
+    height: 3.5em;
+    @extend %pos-rel;
+    @extend %text-center;
+	li {
+		visibility: hidden;
+		padding: 0 2em;
+		@extend %pos-abs;
+		@include rounded_element($border: "", $radius: 10px, $background: "", $color: white);
+	}
+}
+
+section {
+	padding: 0 $base-side-padding;
+}

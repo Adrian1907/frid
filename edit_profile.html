@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+	<link rel="stylesheet" type="text/css" href="css/edit_profile.css">
+	<title>Профиль</title>
+</head>
+<body>
+	<header>
+		<a class="logo" href="main.html">
+			<img src="img/logo.png" alt="Frid">
+		</a>
+		<nav>
+			<ul>
+				<li><a href="profile.html">Профиль</a></li>
+				<li><a href="#">Мои объявления</a></li>
+				<li><a class="create-ad" href="#">Подать объявление</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<ul class="hints">
+			<li class="success wide">Ваши данные успешно сохранены!</li>
+			<li class="fail wide">Заполните обязательные поля!</li>
+		</ul>
+		<aside>
+			<p>Меню</p>
+			<ul>
+				<li>Изменить пароль</li>
+				<li>Изменить аватар</li>
+			</ul>
+		</aside>
+		<form method="post" action="#">
+			<ul>
+				<li>
+					<label>
+						<p>Имя:</p>
+						<input type="text" name="name" required>
+					</label>
+				</li>
+				<li>
+					<label>
+						<p>Телефон:</p>
+						<input type="tel" required>
+					</label>
+				</li>
+			</ul>
+			<ul class="messengers">
+				<li>
+					<label>
+						<p>Skype</p>
+						<input type="text">
+					</label>
+				</li>
+				<li>
+					<label>
+						<p>Viber</p>
+						<input type="text">
+					</label>
+				</li>
+				<li>
+					<label>
+						<p>What'sApp</p>
+						<input type="text">
+					</label>
+				</li>
+			</ul>
+			<button type="submit" class="yellow">Сохранить</button>
+		</form>
+	</section>
+</body>
+</html>
