@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+	<link rel="stylesheet" type="text/css" href="css/feedback.css">
+	<title>Профиль</title>
+</head>
+<body>
+	<header>
+		<figure class="logo">
+			<a href="main.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="135" height="47" viewBox="0 0 135 47">
+				  <text fill="#6200b3" style="font: 48px 'Gabriola'" transform="translate(0.049 46.369) scale(1.693)">FRID</text>
+				  <image alt="Frid" src="img/logo.png" xlink:href="null">
+				</svg>
+			</a>
+			<figcaption>доска бесплатных объявлений</figcaption>
+		</figure>
+		<nav>
+			<ul>
+				<li><a href="profile.html">Профиль</a></li>
+				<li><a href="#">Мои объявления</a></li>
+				<li><a class="create-ad" href="#">Подать объявление</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<form class="feedback" method="post" action="#">
+			<h2>Написать в администрацию</h2>
+			<label>
+				<span>Тема сообщения</span>
+				<select name="theme">
+					<option disabled selected value="0">Выберите тему...</option>
+					<option value="1">Тема 1</option>
+					<option value="2">Тема 2</option>
+				</select>
+			</label>
+			<label>
+				<span>Текст сообщения</span>
+				<textarea name="message" placeholder="Описание"></textarea>
+			</label>
+			<input type="email" placeholder="Введите Ваш E-mail...">
+			<button type="submit" class="yellow">Отправить</button>
+		</form>
+	</section>
+</body>
+</html>
