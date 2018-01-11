@@ -38,6 +38,10 @@ label {
 	@extend %pointer;
 }
 
+h2 {
+	font-size: 2.1em;
+}
+
 input:not([type="checkbox"]),
 select,
 textarea {
@@ -50,6 +54,11 @@ textarea {
 	font-family: inherit;
 	line-height: 3.5em;
 	outline: none;
+}
+
+select {
+	-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;appearance: none;
+	background: url(../img/arr_down.svg) no-repeat 90% center;
 }
 
 button {

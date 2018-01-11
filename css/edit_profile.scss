@@ -1,5 +1,9 @@
 @import "_main", "_header";
 
+section {
+	padding: 0 $base-side-padding;
+}
+
 .hints {
 	max-width: 35%;
     margin: 1em auto;
@@ -9,12 +13,32 @@
     @extend %text-center;
 	li {
 		visibility: hidden;
-		padding: 0 2em;
+		padding: 0 1em;
 		@extend %pos-abs;
 		@include rounded_element($border: "", $radius: 10px, $background: "", $color: white);
 	}
 }
 
-section {
-	padding: 0 $base-side-padding;
+.success, .fail {
+	&::before {
+		content: "";
+		background: url(../img/done.svg) no-repeat center/cover;
+		width: 22px;
+	    height: 22px;
+	    margin: 0 10px -0.4em 0;
+	    @extend %inline-block;
+	}
+}
+
+.fail {
+	&::before {
+		background-image: url(../img/error.svg);
+	}
+}
+
+.container {
+	@extend %flex;
+}
+
+aside {
 }
