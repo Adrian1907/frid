@@ -1,14 +1,30 @@
 @import "_main", "_header";
 
 section {
-	padding: 0 $base-side-padding;
+    padding: 0 $base-side-padding;
 }
 
 .feedback {
-	* {
-		@extend %block;
-	}
-	select {
-		height: 3.5em;
-	}
+    max-width: 460px;
+    * {
+        @extend %block;
+    }
+    label {
+        margin-bottom: 1em;
+    }
+    select {
+        height: 3.5em;
+        &:not(:focus) {
+            color: $gray;
+        }
+    }
+    textarea {
+        resize: none;
+        height: 10.5em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    button {
+        margin-top: 2em;
+    }
 }

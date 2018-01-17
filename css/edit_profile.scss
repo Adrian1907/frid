@@ -38,7 +38,24 @@ section {
 
 .container {
 	@extend %flex;
+	form {
+		@extend %flex;
+		flex-wrap: wrap;
+	    align-items: flex-start;
+		span, button {
+			@extend %block;
+		}
+	}
 }
 
-aside {
+aside {}
+
+.contact-inf {
+	span {
+		&::after {
+			content: " *";
+			color: $fail_color;
+			visibility: hidden;
+		}
+	}
 }

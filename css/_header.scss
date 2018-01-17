@@ -3,6 +3,9 @@ header {
 	@extend %flex;
 	.logo {
 		margin: 0 auto 0 0;
+		>* {
+			@extend %inline-block;
+		}
 	}
 	nav {
 		ul {

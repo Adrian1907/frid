@@ -19,6 +19,11 @@
 	}
 }
 
+::-webkit-input-placeholder {color:$gray;}
+::-moz-placeholder          {color:$gray;}
+:-moz-placeholder           {color:$gray;}
+:-ms-input-placeholder      {color:$gray;}
+
 body {
 	font: 14px 'Open Sans', sans-serif;
 	color: $black;
@@ -36,6 +41,10 @@ ul, ol {
 
 label {
 	@extend %pointer;
+	span {
+		font-size: 1.1em;
+		line-height: 2;
+	}
 }
 
 h2 {
@@ -43,22 +52,27 @@ h2 {
 }
 
 input:not([type="checkbox"]),
+select {
+	line-height: 3.5em;
+}
+
+input:not([type="checkbox"]),
 select,
 textarea {
-	border: 2px solid #d7d7d7;
+	border: 2px solid $grayborder;
 	border-radius: 10px;
 	background: white;
 	-webkit-box-shadow: inset 0px 1px 3px 0px rgba(123, 123, 123, 0.3);
 	        box-shadow: inset 0px 1px 3px 0px rgba(123, 123, 123, 0.3);
 	padding: 0 2em;
 	font-family: inherit;
-	line-height: 3.5em;
+	font-size: inherit;
 	outline: none;
 }
 
 select {
 	-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;appearance: none;
-	background: url(../img/arr_down.svg) no-repeat 90% center;
+	background: url(../img/arr_down.svg) no-repeat calc(100% - 15px) center;
 }
 
 button {
@@ -70,13 +84,15 @@ button {
 	cursor: pointer;
 	outline: none;
 	@include rounded_element($border: none, $radius: 10px, $background: "", $color: $black);
-	&.yellow {
-		background: $yellow;
-	}
-	&.violet {
-		background: $violet;
-		color: white;
-	}
+}
+
+.yellow {
+	background: $yellow;
+}
+
+.violet {
+	background: $violet;
+	color: white;
 }
 
 .success {
