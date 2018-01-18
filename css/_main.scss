@@ -53,7 +53,7 @@ h2 {
 
 input:not([type="checkbox"]),
 select {
-	line-height: 3.5em;
+	@extend %base-button-height;
 }
 
 input:not([type="checkbox"]),
@@ -72,25 +72,32 @@ textarea {
 
 select {
 	-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;appearance: none;
+
 	background: url(../img/arr_down.svg) no-repeat calc(100% - 15px) center;
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $black;
 }
 
 button {
 	padding: 0 2em;
-	line-height: 3.5em;
 	font-family: inherit;
 	font-size: inherit;
-	@extend %uppercase;
-	cursor: pointer;
 	outline: none;
+	@extend %base-button-height;
+	@extend %pointer;
 	@include rounded_element($border: none, $radius: 10px, $background: "", $color: $black);
 }
 
 .yellow {
+	@extend %uppercase;
 	background: $yellow;
 }
 
 .violet {
+	@extend %uppercase;
 	background: $violet;
 	color: white;
 }

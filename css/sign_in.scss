@@ -21,7 +21,6 @@
 .helpers {
 	color: $violet;
 	display: table;
-	@extend .wide;
 	& > * {
 		display: table-cell;
 	}
@@ -31,10 +30,10 @@
 }
 
 a.violet {
+	padding: 0 2em;
 	@extend %inline-block;
 	@extend %uppercase;
-	padding: 0 2em;
-	line-height: 3.5;
+	@extend %base-button-height;
 	@include rounded_element($border: "", $radius: 10px, $background: $violet, $color: white);
 }
 
