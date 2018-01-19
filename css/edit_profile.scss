@@ -1,5 +1,7 @@
 @import "_main", "_header";
 
+
+
 section {
 	padding: 0 $base-side-padding;
 }
@@ -37,28 +39,31 @@ section {
 }
 
 .container {
-	@extend %flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
 	form {
-		@extend %flex;
-		flex: 1 0 auto;
-		flex-wrap: inherit;
-	    align-items: inherit;
+	    width: 74%;
+		@extend %inline-block;
 		span, button {
 			@extend %block;
 		}
 		ul {
-			margin: 0 8% 0 0;
-    		flex: 0 1 34%;
+			width: 35%;
+			min-width: 175px;
+			margin: 0 4em 1em 0;
+			@extend %float-left;
+		}
+		footer {
+			clear: both;
 		}
 	}
 }
 
 aside {
+    width: 20%;
+    min-width: 175px;
+	max-width: 220px;
+    margin: 0 6% 1em 0;
+	@extend %float-left;
 	@include rounded_element(2px solid $grayborder, $radius: 10px, $background: "", $color: "");
-	flex: 0 0 20%;
-    margin-right: 6%;
 	p {
 		@extend %text-center;
 		@extend %base-button-height;
@@ -71,6 +76,33 @@ aside {
 		color: $violet;
 	}
 }
+
+.messengers {
+	label {
+		@extend %pos-rel;
+		@extend %block;
+		&::before {
+			content: '';
+			width: 2.15em;
+			height: 2.15em;
+			left: 0.8em;
+			bottom: 0.8em;
+			background: url(../img/messengers.png) no-repeat center 0.1em/2.15em;
+			@extend %pos-abs;
+		}
+	}
+	.viber::before {
+	background-position-y: 50%;
+	}
+
+	.whatsapp::before {
+		background-position-y: 100%;
+	}
+	input {
+		padding-left: 3.5em;
+	}
+}
+
 
 .invalid {
 	span {
