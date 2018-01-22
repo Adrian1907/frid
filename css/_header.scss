@@ -1,8 +1,9 @@
 header {
 	padding: 1em $base-side-padding;
 	@extend %flex;
+	@extend %flex-wrap;
 	.logo {
-		margin: 0 auto 0 0;
+		margin-right: auto;
 		>* {
 			@extend %inline-block;
 		}
@@ -10,9 +11,10 @@ header {
 	nav {
 		ul {
 			@extend %flex;
+			@extend %flex-wrap;
 			@extend %m0;
 		}
-		li + li { margin-left: 2em; }
+		li:not(:last-child) { margin-right: 2em; }
 		a {
 			padding: 0 2em;
 			@extend %inline-block;

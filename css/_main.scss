@@ -91,6 +91,10 @@ button {
 	@include rounded_element($border: none, $radius: 10px, $background: "", $color: $black);
 }
 
+figure {
+	@extend %m0;
+}
+
 .yellow {
 	@extend %uppercase;
 	background: $yellow;

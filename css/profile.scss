@@ -1,0 +1,80 @@
+@import "_main", "_header";
+
+section {
+	padding: 0 $base-side-padding;
+	[role="heading"] {
+		@extend %clearfix;
+	}
+	h2 {
+		margin-bottom: 0;
+	}
+	span, h4, .price {
+		color: $violet;
+	}
+}
+
+.ads {
+	ul[role="toolbar"] {
+		width: 150px;
+		@extend %float-right;
+	}
+	>li {
+		border-left: 2px solid $yellow-border;
+		@extend %pos-rel;
+		@extend %clearfix;
+		&::after {
+			content:"";
+			width: 40%;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background-color: $yellow-border;
+			@extend %pos-abs;
+			@extend %block;
+		}
+	}
+	figure {
+		@extend %flex;
+		@extend %flex-wrap;
+	}
+	figcaption {
+		width: calc(100% - 150px);
+	}
+	img {
+		width: 150px;
+    	height: 101px;
+    	object-fit: cover;
+	}
+	h4 {
+		font-weight: 400;
+		@extend %m0;
+		@extend %inline-block;
+	}
+	button {
+		padding: 0 1em;
+	}
+}
+
+.inactive {
+	@extend %float-right;
+}
+
+.sold, .delete {
+	background: none;
+	@extend %uppercase;
+}
+
+.sold {
+	color: $violet;
+	border: 2px solid $violet;
+}
+
+.delete {
+	color: red;
+	border: 2px solid red;
+}
+
+.price {
+	font-size: 1.6em;
+	@extend %float-right;
+}

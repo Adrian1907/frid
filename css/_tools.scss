@@ -1,5 +1,6 @@
 $login_bg: #50c0bf;
 $yellow: #fbd303;
+$yellow-border: #fff200;
 $violet: #3b0086;
 $black: #252525;
 $gray: #b7b7b7;
@@ -9,12 +10,12 @@ $fail_color: #d20404;
 
 $base-side-padding: 7%;
 
-@function calcFluidSize($f-min, $f-max, $v-min, $v-max, $units: px) {
-  $k: ($f-max - $f-min)/($v-max - $v-min);
-  $b: $f-min - $k * $v-min;
-  $b: $b + $units;
-  @return calc( #{$k} * 100vw + #{$b} );
-}
+// @function calcFluidSize($f-min, $f-max, $v-min, $v-max, $units: px) {
+//   $k: ($f-max - $f-min)/($v-max - $v-min);
+//   $b: $f-min - $k * $v-min;
+//   $b: $b + $units;
+//   @return calc( #{$k} * 100vw + #{$b} );
+// }
 
 @mixin rounded_element($border, $radius: 10px, $background: white, $color: $black) {
 	@if $border != "" { border: $border; }
@@ -43,8 +44,23 @@ $base-side-padding: 7%;
 	display: flex;
 }
 
+%flex-wrap {
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
 %float-left {
 	float: left;
+}
+
+%float-right {
+	float: right;
+}
+
+%clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 %pointer {
