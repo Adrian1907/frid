@@ -1,25 +1,38 @@
 header {
 	padding: 1em $base-side-padding;
+	justify-content: space-between;
 	@extend %flex;
-	@extend %flex-wrap;
 	.logo {
-		margin-right: auto;
+		img {
+			@media (max-width: 992px) { height: 2.2em; }
+		}
 		>* {
 			@extend %inline-block;
 		}
 	}
 	nav {
 		ul {
+			justify-content: flex-end;
+			align-items: center;
 			@extend %flex;
 			@extend %flex-wrap;
 			@extend %m0;
+			@media (max-width: 540px) { flex-direction: column; }
 		}
-		li:not(:last-child) { margin-right: 2em; }
+		li + li {
+			margin-left: 2em;
+			@media (max-width: 992px) { margin-left: 1em; }
+			@media (max-width: 540px) { margin-left: 0; }
+		}
 		a {
 			padding: 0 2em;
 			@extend %inline-block;
 			@extend %base-button-height;
 			@include rounded_element($border: 1px solid $violet, $radius: 10px, $background: "", $color: $violet);
+			@media (max-width: 992px) {
+				padding: 0 0.6em;
+				line-height: 2.2;
+			}
 		}
 	}
 }
