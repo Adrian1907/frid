@@ -12,7 +12,8 @@
 		<a class="logo" href="main.html">
 			<img alt="Frid" src="img/logo.png">
 		</a>
-		<nav>
+		<nav role="menubar">
+			<button class="burger"></button>
 			<ul>
 				<li><a href="profile.html">Профиль</a></li>
 				<li><a href="#">Мои объявления</a></li>
@@ -23,7 +24,7 @@
 	<section>
 		<div role="heading">
 			<h2>Ваш профиль</h2>
-			<p><span class="active">В данный момент на сайте активно <strong>3</strong> ваших объявлений</span>
+			<p><span class="now-active">В данный момент на сайте активно <strong>3</strong> ваших объявлений</span>
 				<span class="inactive">Посмотреть неактивные объявления</span>
 			</p>
 		</div>
@@ -113,5 +114,14 @@
 			</ul>
 		</div>
 	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('.burger').click(function() {
+		    	$(this).toggleClass('active');
+		    	$(this).next().slideToggle();
+		    });
+		});
+	</script>
 </body>
 </html>

@@ -2,37 +2,93 @@ header {
 	padding: 1em $base-side-padding;
 	justify-content: space-between;
 	@extend %flex;
-	.logo {
-		img {
-			@media (max-width: 992px) { height: 2.2em; }
-		}
-		>* {
-			@extend %inline-block;
-		}
-	}
 	nav {
+	    text-align: right;
 		ul {
+			white-space: nowrap;
 			justify-content: flex-end;
-			align-items: center;
 			@extend %flex;
-			@extend %flex-wrap;
 			@extend %m0;
-			@media (max-width: 540px) { flex-direction: column; }
+			@media (max-width: 992px) {
+				display: none;
+			    margin: 1em 0;
+			    flex-direction: column;
+			}
 		}
 		li + li {
-			margin-left: 2em;
-			@media (max-width: 992px) { margin-left: 1em; }
-			@media (max-width: 540px) { margin-left: 0; }
+			margin: 0 0 0 2em;
+			@media (max-width: 992px) { margin: 0.5em 0 0; }
 		}
 		a {
 			padding: 0 2em;
+			@extend %text-center;
 			@extend %inline-block;
 			@extend %base-button-height;
 			@include rounded_element($border: 1px solid $violet, $radius: 10px, $background: "", $color: $violet);
 			@media (max-width: 992px) {
+				display: block;
 				padding: 0 0.6em;
 				line-height: 2.2;
 			}
 		}
 	}
 }
+
+.logo {
+	img {
+		@media (max-width: 992px) { height: 2.2em; }
+	}
+	>* {
+		@extend %inline-block;
+	}
+}
+
+.burger {
+	& + ul {
+		//Prevent the disappearance of menu
+		@media (min-width: 993px) { display: flex !important;}
+	}
+	display: none;
+	background: transparent;
+	position: relative;
+	height: 30px;
+	width: 50px;
+	@extend %p0;
+	@media (max-width: 992px) { display: inline-block;}
+
+	&:before,
+	&:after {
+		background: $violet;
+		backface-visibility: hidden;
+		content: "";
+		height: 2px;
+		left: 0;
+		transition: .5s;
+		width: 50px;
+	}
+
+	&:before {
+		box-shadow: $violet 0 14px 0 0;
+		position: absolute;
+		top: 0;
+	}
+
+	&:after {
+		position: absolute;
+		top: calc(100% - 2px);
+	}
+
+	  &.active {
+
+	    &:before {
+	      box-shadow: transparent 0 0 0 0;
+	      top: 50%;
+	      transform: rotate(225deg);
+	    }
+
+	    &:after {
+	      top: 50%;
+	      transform: rotate(315deg);
+	    }
+	  }
+ }

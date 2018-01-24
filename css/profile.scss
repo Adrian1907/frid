@@ -11,7 +11,7 @@ section {
 	h2 {
 		margin-bottom: 0;
 	}
-	.active span, .inactive, strong, h4, .price {
+	.now-active span, .inactive, strong, h4, .price {
 		color: $violet;
 	}
 }
@@ -93,7 +93,7 @@ section {
 	}
 }
 
-.active {
+.now-active {
 	font-size: 1.3em;
 }
 

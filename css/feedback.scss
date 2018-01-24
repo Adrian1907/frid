@@ -1,5 +1,16 @@
 @import "_main", "_header";
 
+header {
+    figure {
+        width: 100px;
+        white-space: nowrap;
+    }
+    .logo figcaption {
+        @media (max-width:1080px) and (min-width:993px) { white-space: normal;}
+        @media (max-width:440px) { display: none; }
+    }
+}
+
 section {
     padding: 0 $base-side-padding;
 }
@@ -14,9 +25,7 @@ section {
     }
     select {
         height: 3.5em;
-        &:not(:focus) {
-            color: $gray;
-        }
+        &:not(:focus) { color: $gray; }
     }
     textarea {
         resize: none;

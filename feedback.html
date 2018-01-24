@@ -19,7 +19,8 @@
 			</a>
 			<figcaption>доска бесплатных объявлений</figcaption>
 		</figure>
-		<nav>
+		<nav role="menubar">
+			<button class="burger"></button>
 			<ul>
 				<li><a href="profile.html">Профиль</a></li>
 				<li><a href="#">Мои объявления</a></li>
@@ -46,5 +47,14 @@
 			<button type="submit" class="yellow">Отправить</button>
 		</form>
 	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('.burger').click(function() {
+		    	$(this).toggleClass('active');
+		    	$(this).next().slideToggle();
+		    });
+		});
+	</script>
 </body>
 </html>
