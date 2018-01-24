@@ -5,15 +5,16 @@ section {
 }
 
 .hints {
-	max-width: 35%;
+	max-width: 36%;
+	min-width: 275px;
     margin: 1em auto;
     height: 3.5em;
     @extend %base-button-height;
     @extend %pos-rel;
     @extend %text-center;
+    @media (max-width: 992px) { max-width: 45%; }
 	li {
 		visibility: hidden;
-		padding: 0 1em;
 		@extend %pos-abs;
 		@include rounded_element($border: "", $radius: 10px, $background: "", $color: white);
 	}
@@ -38,16 +39,23 @@ section {
 
 .container {
 	form {
-	    width: 74%;
+	    width: 60%;
 		@extend %inline-block;
+		@media (max-width: 992px) { width: 67%; }
+		@media (max-width: 767px) { width: 100%; }
 		span, button {
 			@extend %block;
 		}
 		ul {
-			width: 35%;
+			width: 43%;
 			min-width: 175px;
-			margin: 0 4em 1em 0;
+			margin: 0 5.2% 1.5em 0;
 			@extend %float-left;
+			@media (max-width: 992px) { width: 47%; }
+			@media (max-width: 480px) { width: 100%; margin-right: 0; }
+		}
+		.messengers {
+			@media (max-width: 992px) { margin-right: 0; }
 		}
 		footer {
 			clear: both;
@@ -73,6 +81,7 @@ aside {
 		margin: 0 1.5em 1em;
 		color: $violet;
 	}
+	@media (max-width: 480px) { width: 100%; margin-right: 0; max-width: unset;}
 }
 
 .messengers {

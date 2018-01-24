@@ -29,6 +29,7 @@ body {
 	color: $black;
 	@extend %p0;
 	@extend %m0;
+	@media (max-width : 767px) { font-size: 13px; }
 }
 
 a {	text-decoration: none; }
@@ -89,6 +90,9 @@ button {
 	@extend %base-button-height;
 	@extend %pointer;
 	@include rounded_element($border: none, $radius: 10px, $background: "", $color: $black);
+	&[type="submit"] {
+		margin-bottom: 1em;
+	}
 }
 
 figure {
