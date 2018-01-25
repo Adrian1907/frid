@@ -69,14 +69,7 @@ aside {
 	max-width: 220px;
     margin: 0 6% 1em 0;
 	@extend %float-left;
-	@include rounded_element(2px solid $grayborder, $radius: 10px, $background: "", $color: "");
-	p {
-		@extend %text-center;
-		@extend %base-button-height;
-		border-top-left-radius: inherit;
-    	border-top-right-radius: inherit;
-    	margin: -2px -2px 0;
-	}
+	@extend %yellow-title;
 	li {
 		margin: 0 1.5em 1em;
 		color: $violet;

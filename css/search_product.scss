@@ -1,0 +1,112 @@
+@import "_main", "_header";
+
+header {
+	@extend %header-search;
+}
+
+.search-container {
+    @media (min-width: 993px) { margin-right: 12%; }
+}
+
+.photo, .currency, section strong, section h4 {
+	color: $violet;
+}
+
+section {
+	padding: 0 $base-side-padding;
+}
+
+.filter-bar {
+    margin-top: 4%;
+	@extend %yellow-title;
+	form {
+		padding: 1.5em #{$base-side-padding - 1};
+	}
+	li {
+		@extend %inline-block;
+	}
+	.violet {
+		border: 2px solid $violet;
+	}
+}
+
+.photo {
+    margin-right: 3%;
+	& + span {
+		color: $gray;
+	}
+}
+.currency {
+	@extend %inline-block;
+	@extend %m0;
+}
+
+.range {
+	font-size: 90%;
+	margin: 1.2em 0 2.5em;
+	li {
+		&:first-child {
+			&::after {
+				content: "";
+				width: 2.6em;
+				height: 1px;
+				background-color: $gray;
+				margin: 0 -0.3em 0.7em;
+				@extend %inline-block;
+				@media (max-width: 767px) {
+					width: 1px;
+					height: 2.6em;
+					display: block;
+					position: absolute;
+					left: 50%;
+				}
+			}
+			@media (max-width: 767px) { margin-bottom: 2.6em; }
+		}
+		@media (max-width: 767px) { display: block; }
+	}
+	input {
+		@media (min-width: 768px) { max-width: 200px; }
+	}
+}
+
+.controls {
+	@extend %m0;
+	li {
+		&+ li {
+			margin-left: 1em;
+			@media (max-width: 540px) { margin-left: 5%; }
+		}
+	}
+	button {
+		@media (max-width: 540px) { padding: 0 1em; }
+	}
+}
+
+.clear {
+	@include rounded_element($border: 2px solid $violet, $radius: "", $background: white, $color: $violet);
+	@extend %uppercase;
+}
+
+.results-head {
+	font-size: 1.2em;
+    margin-top: 1.2em;
+	>* {
+		@extend %inline-block;
+		@extend %m0;
+	}
+	p {
+		font-size: 120%;
+	}
+}
+
+.results {
+	@extend %ads;
+	figure {
+		padding-right: 0;
+	}
+}
+
+.details {
+	@extend %ads-details;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800">
+	<link rel="stylesheet" type="text/css" href="css/search_product.css">
+	<title>Поиск товара</title>
+</head>
+<body>
+	<header>
+		<a class="logo" href="main.html">
+			<img alt="Frid" src="img/logo.png">
+		</a>
+		<nav role="menubar">
+			<button class="burger"></button>
+			<ul>
+				<li class="search-container">
+					<form method="get" role="search" action="#">
+						<input type="search" name="search" placeholder="Поиск...">
+						<button type="submit" class="magn"></button>
+					</form>
+				</li>
+				<li><a class="yellow" href="#">Войти</a></li>
+				<li><a class="violet" href="#">Подать объявление</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<div class="filter-bar">
+			<p class="yellow">Фильтры</p>
+			<form action="#">
+				<label class="photo"><input type="checkbox">Только с фото</label>
+				<span>Валюта:</span>
+				<ul class="currency">
+					<li>ГРН</li>
+					<li>USD</li>
+				</ul>
+				<ol class="range">
+					<li>
+						<label><input class="wide" type="number" min="0" placeholder="Цена от (грн)..."></label>
+					</li>
+					<li>
+						<label><input class="wide" type="number" min="1" placeholder="Цена до (грн)..."></label>
+					</li>
+				</ol>
+				<ul class="controls">
+					<li><button class="violet" type="button">Применить</button></li>
+					<li><button class="clear" type="button">Очистить</button></li>
+				</ul>
+			</form>
+		</div>
+		<div class="results-head">
+			<h3>Результаты поиска:</h3> <p>по Вашему запросу найдено <strong>3</strong> объявлений</p>
+		</div>
+		<div>
+			<ul class="results">
+				<!-- First card -->
+				<li>
+					<figure>
+						<img src="img/example-img-komod.jpg" alt="">
+						<figcaption>
+							<h4>Комод</h4>
+							<strong class="price">800 грн</strong>
+							<article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, veniam, nesciunt eaque nostrum reiciendis velit perspiciatis voluptatibus tempore tempora culpa quaerat, vel temporibus, aut? Autem quae beatae necessitatibus, sit, soluta sequi incidunt at quis pariatur, a maiores. Voluptatem, veritatis, consectetur. Inventore, natus maxime dolore.</article>
+						</figcaption>
+					</figure>
+					<p class="details">
+						<time datetime="2018-01-01">01 января 00:00</time>
+						<span class="views">Просмотры: <span>0</span></span>
+						<span>ул. Бруно, 8</span>
+					</p>
+				</li>
+				<!-- Second card -->
+				<li>
+					<figure>
+						<img src="https://img.mebelok.com/image/cache/data/Azzare/bohema/elementy/031-komod-900-svetluy-0x0.jpg" alt="">
+						<figcaption>
+							<h4>Комод 2</h4>
+							<strong class="price">790 грн</strong>
+							<article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis dolore, quam explicabo!</article>
+						</figcaption>
+					</figure>
+					<p class="details">
+						<time datetime="2018-01-23">23 января 13:10</time>
+						<span class="views">Просмотры: <span>103</span></span>
+						<span>ул. Пушкина, 12</span>
+					</p>
+				</li>
+				<!-- Third card -->
+				<li>
+					<figure>
+						<img src="https://cs2.livemaster.ru/storage/b6/7e/f4775d640a7f768462b81701d0eo--dlya-doma-interera-komod-v-stile-provans-na.jpg" alt="">
+						<figcaption>
+							<h4>Комод 3</h4>
+							<strong class="price">1240 грн</strong>
+							<article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis dolore, quam explicabo! Voluptatum pariatur, reiciendis facere beatae magni facilis aperiam consequatur.</article>
+						</figcaption>
+					</figure>
+					<p class="details">
+						<time datetime="2018-01-20">20 января 18:13</time>
+						<span class="views">Просмотры: <span>3</span></span>
+						<span>ул. Набережная Победы, 124-А</span>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('.burger').click(function() {
+		    	$(this).toggleClass('active');
+		    	$(this).next().slideToggle();
+		    });
+		});
+	</script>
+</body>
+</html>

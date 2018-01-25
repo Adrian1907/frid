@@ -1,6 +1,7 @@
 header {
 	padding: 1em $base-side-padding;
 	justify-content: space-between;
+	align-items: flex-start;
 	@extend %flex;
 	nav {
 	    text-align: right;
@@ -15,10 +16,6 @@ header {
 			    flex-direction: column;
 			}
 		}
-		li + li {
-			margin: 0 0 0 2em;
-			@media (max-width: 992px) { margin: 0.5em 0 0; }
-		}
 		a {
 			padding: 0 2em;
 			@extend %text-center;
@@ -32,9 +29,14 @@ header {
 			}
 		}
 	}
+	li + li {
+		margin: 0 0 0 2em;
+		@media (max-width: 992px) { margin: 0.5em 0 0; }
+	}
 }
 
 .logo {
+	width: 0;
 	img {
 		@media (max-width: 992px) { height: 2.2em; }
 	}

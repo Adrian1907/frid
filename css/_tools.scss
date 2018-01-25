@@ -10,13 +10,6 @@ $fail_color: #d20404;
 
 $base-side-padding: 7%;
 
-// @function calcFluidSize($f-min, $f-max, $v-min, $v-max, $units: px) {
-//   $k: ($f-max - $f-min)/($v-max - $v-min);
-//   $b: $f-min - $k * $v-min;
-//   $b: $b + $units;
-//   @return calc( #{$k} * 100vw + #{$b} );
-// }
-
 @mixin rounded_element($border, $radius: 10px, $background: white, $color: $black) {
 	@if $border != "" { border: $border; }
 	@if $radius != "" { border-radius: $radius; }
@@ -73,5 +66,149 @@ $base-side-padding: 7%;
 %pos-rel { position: relative; }
 %pos-abs { position: absolute; }
 %base-button-height { line-height: 3.5; }
+
+//Ads list
+%ads {
+	ul[role="toolbar"] {
+		@extend %m0;
+		@extend %float-right;
+		@media (max-width : 767px) { position: absolute; top: 0.7em; right: 0; }
+		li {
+			@media (max-width : 767px) and (min-width: 541px) { display: inline-block; }
+			+ li {
+				@media (min-width : 768px), (max-width: 540px) { margin-top: 0.5em; }
+			}
+		}
+	}
+	>li {
+		@media (min-width: 541px) {
+			border-left: 2px solid $yellow-border;
+			padding-left: 1em;
+		}
+		margin: 4% 0;
+		@extend %clearfix;
+		@extend %pos-rel;
+		&::before {
+			content:"";
+			width: 34%;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background-color: $yellow-border;
+			@extend %pos-abs;
+			@extend %block;
+			@media (max-width: 540px) { width: 100%; }
+		}
+	}
+	figure {
+		padding-top: 0.7em;
+		@extend %flex;
+		@extend %flex-wrap;
+		@media (min-width : 768px) { padding-right: 6%; }
+	}
+	img {
+		width: 150px;
+    	height: 101px;
+    	-o-object-fit: cover;
+    	object-fit: cover;
+	}
+	h4 {
+		font-size: 1.4em;
+		font-weight: 400;
+		@extend %m0;
+		@extend %inline-block;
+	}
+	.price {
+	    font-size: 2em;
+	    line-height: 0.8;
+		@extend %float-right;
+	}
+	figcaption {
+		@media (min-width : 768px) {
+			width: calc(100% - 150px);
+			padding-left: 1.5em;
+		}
+		@media (max-width: 767px) {
+			padding-top: 0.7em;
+		}
+	}
+	article {
+		padding-top: 0.5em;
+	    line-height: 1.7;
+	}
+	button {
+		padding: 0 1em;
+		line-height: 3.2;
+		@media (max-width: 767px) {
+			padding: 0 0.6em;
+    		line-height: 2.5;
+    		font-size: 86%;
+    		border-width: 1px;
+		}
+	}
+}
+
+//Ads details
+%ads-details {
+    padding: 0.2em 0 1.2em;
+    color: $gray;
+    @extend %m0;
+    @extend %inline-block;
+    time {
+    	@media (min-width: 541px) { position: absolute; }
+    }
+    .views {
+		@media (min-width: 541px) {	margin-left: calc(150px + 1.5em); }
+	}
+    >* {
+    	margin-right: 2em;
+    	@extend %inline-block;
+    }
+}
+
+//Serach form in header
+%header-search {
+	nav {
+		li + li {
+		    @media (min-width: 993px) {
+		    	margin-left: 1em;
+		    }
+		}
+	}
+	form {
+		@extend %pos-rel;
+	}
+	input[type="search"] {
+		&::-ms-clear { width: 0; height: 0;	}
+		&::-webkit-search-cancel-button { display: none; }
+	    padding-right: 2.8em;
+	}
+	.magn {
+		width: 1.6em;
+		height: 1.6em;
+		background: url(../img/magnifying-glass.png) no-repeat center/cover;
+		right: 1em;
+		top: 1.1em;
+		border-radius: unset;
+		@extend %p0;
+		@extend %pos-abs;
+	}
+	.yellow {
+		border-color: $yellow;
+		color: inherit;
+	}
+}
+
+//Rounded block with yellow title
+%yellow-title {
+	@include rounded_element(2px solid $grayborder, $radius: 10px, $background: "", $color: "");
+	p {
+		@extend %text-center;
+		@extend %base-button-height;
+		border-top-left-radius: inherit;
+    	border-top-right-radius: inherit;
+    	margin: -2px -2px 0;
+	}
+}
 
 .wide {width:100%}
