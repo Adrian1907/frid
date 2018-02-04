@@ -116,3 +116,9 @@ figure {
 .fail {
 	background-color: $fail_color;
 }
+
+.price {
+    font-size: 2em;
+    line-height: 0.8;
+	@extend %float-right;
+}

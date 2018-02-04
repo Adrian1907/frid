@@ -1,0 +1,49 @@
+$slider-arrow: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="35 42 338 324"><path fill="white" d="M266 21L245 0 42 204l203 203 21-21L85 204z"/><path fill="rgb(251,211,3)" d="M365 21L344 0 141 204l203 203 21-21-182-182z"/></svg>';
+
+.owl-nav, .owl-dots {
+	height: 0;
+	width: 100%;
+}
+
+//Arrows
+.owl-nav {
+	bottom: 50%;
+	padding: 0 1em;
+	@extend %pos-abs;
+	&>* {
+		display: inline-block;
+		width: 32px;
+		height: 40px;
+		background: url('data:image/svg+xml;utf8,#{$slider-arrow}') no-repeat 0 0/cover;
+		transform: translateY(-50%);
+	}
+}
+
+.owl-next {
+	transform: translateY(-50%)scaleX(-1);
+	@extend %float-right;
+}
+
+//Dots
+.owl-dots {
+	bottom: 2.6em;
+	@extend %pos-abs;
+	@extend %text-center;
+	&>* {
+	    @extend %inline-block;
+		@include rounded_element($border:'', $radius: 50%, $background: white, $color:'');
+	}
+}
+
+.owl-dot {
+	width: 10px;
+    height: 10px;
+    transition: .2s ease;
+    & + * {
+    	margin-left: 1.2em;
+    }
+    &.active {
+    	transform: scale(1.6);
+    	background-color: $yellow;
+    }
+}

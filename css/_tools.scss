@@ -118,11 +118,6 @@ $base-side-padding: 7%;
 		@extend %m0;
 		@extend %inline-block;
 	}
-	.price {
-	    font-size: 2em;
-	    line-height: 0.8;
-		@extend %float-right;
-	}
 	figcaption {
 		@media (min-width : 768px) {
 			width: calc(100% - 150px);

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800">
+	<link rel="stylesheet" type="text/css" href="css/product.css">
+	<title>Комод</title>
+</head>
+<body>
+	<header>
+		<a class="logo" href="main.html">
+			<img alt="Frid" src="img/logo.png">
+		</a>
+		<nav role="menubar">
+			<button class="burger"></button>
+			<ul>
+				<li class="search-container">
+					<form method="get" role="search" action="#">
+						<input type="search" name="search" placeholder="Поиск...">
+						<button type="submit" class="magn"></button>
+					</form>
+				</li>
+				<li><a class="yellow" href="sign_in.html">Войти</a></li>
+				<li><a class="violet" href="#">Подать объявление</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<ul class="breadcrumbs">
+			<li><a href="#">Категория</a></li>
+			<li><a href="#">Рубрика</a></li>
+			<li><a href="#">Товар</a></li>
+		</ul>
+		<section class="product-header">
+			<strong>800 грн</strong>
+			<h1>Комод</h1>
+			<p class="details">
+				<time datetime="2018-01-01">01 января 00:00</time>
+				<span class="views">Просмотры: <span>0</span></span>
+				<span>ул. Бруно, 8</span>
+			</p>
+		</section>
+		<div class="content">
+			<figure class="product">
+				<!-- Slider -->
+				<div class="owl-carousel">
+					<div><img class="owl-lazy" data-src="http://i.mebelini.ua/goods/2866/2866169.jpg" alt=""></div>
+					<div><img class="owl-lazy" data-src="http://i.mebelini.ua/goods/2866/2866165.jpg" alt=""></div>
+					<div><img class="owl-lazy" data-src="http://i.mebelini.ua/goods/2866/2866163.jpg" alt=""></div>
+				</div>
+				<figcaption>
+					<article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi optio deleniti repellendus obcaecati sed, animi cupiditate doloremque accusantium, illo natus qui quasi? Aspernatur, recusandae ducimus earum eveniet? Magnam consectetur repellendus ipsum ut molestiae consequatur, reprehenderit pariatur nemo expedita assumenda sint veniam nulla incidunt quibusdam doloribus, in numquam nisi laudantium, quod ad ea possimus. Non tenetur esse velit, totam, inventore eum fugiat nisi dolor minus necessitatibus facere odit consequuntur harum reiciendis assumenda nobis atque laboriosam ipsum amet laudantium tempora, aliquam sed.</article>
+				</figcaption>
+			</figure>
+			<div class="author">
+				<address>
+					<img src="https://www.belnovosti.by/sites/default/files/styles/692/public/article/09-07-2017/5961d2275afd7.jpg" alt="">
+					<div class="contacts">
+						<span class="online">Сергей</span>
+						<ul>
+							<li class="skype">skypename</li>
+							<li class="viber">+380673123456</li>
+							<li class="whatsapp">+380983000000</li>
+						</ul>
+					</div>
+				</address>
+				<div class="other-ads">
+					<h4>Другие объявления автора</h4>
+					<ul>
+						<li>
+							<figure>
+								<img src="https://i.pinimg.com/736x/fd/4b/ca/fd4bcae0c918a365a250ad7080731404--francesco-guardi-the-sans.jpg" alt="">
+								<figcaption>
+									<article>
+										<h2>Картина</h2>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cupiditate pariatur architecto velit, explicabo quo.</p>
+									</article>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Knitted_basket1.jpg/440px-Knitted_basket1.jpg" alt="">
+								<figcaption>
+									<article>
+										<h2>Корзина</h2>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+									</article>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="https://img06.rl0.ru/afisha/720x-/daily.afisha.ru/uploads/images/2/f3/2f3133dd6b044d2e97f3b775aa89db2d.jpg" alt="">
+								<figcaption>
+									<article>
+										<h2>Картонка</h2>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequuntur in, veritatis officia vero facere, facilis nobis perspiciatis molestias tenetur aut...</p>
+									</article>
+								</figcaption>
+							</figure>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="owlсarousel/dist/owl.carousel.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		    $('.burger').click(function() {
+		    	$(this).toggleClass('active');
+		    	$(this).next().slideToggle();
+		    });
+		    $(".owl-carousel").owlCarousel({
+			    items: 1,
+			    loop: true,
+			    nav: true,
+			    navText: ['',''],
+			    dots : true,
+			    margin: 20,
+			    //autoplay: true,
+			    //autoplayTimeout: 8000,
+			    //autoplayHoverPause: true,
+        		autoHeight: true,
+        		lazyLoad: true
+			});
+		});
+	</script>
+</body>
+</html>
