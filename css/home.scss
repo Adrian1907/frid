@@ -1,0 +1,184 @@
+@import "_main";
+
+$double-arrow: '<svg xmlns="http://www.w3.org/2000/svg" width="44" height="35" viewBox="0 0 358 324">' + 
+	'<defs>' +
+	'<linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="700" x3="44">' +
+	'<stop offset="0" stop-color="#{$violet}"/>' +
+	'<stop offset="1" stop-color="#{$yellow}"/>' +
+	'</linearGradient>' +
+	'</defs>' +
+	'<g fill="url(#a)">' + 
+	'<path d="M-4 99l-21 21 204 203 203-203-21-21-182 181z"/>' + 
+	'<path d="M-4 0l-21 21 204 203L382 21 361 0 179 182z"/>' + 
+	'</g></svg>';
+
+$sprite-map: (
+	real_estate: '0 0 509.29 509.29',
+	transport: '0 510 509.29 509.29',
+	electronics: '0 1020 509.29 509.29',
+	work: '0 1530 509.29 509.29',
+	services: '0 2040 509.29 509.29',
+	sport: '0 2550 509.29 509.29',
+	clothes: '0 3060 509.29 509.29',
+	pets: '0 3570 512 512',
+	household_goods: '0 4083 509.29 509.29',
+	goods_for_kids: '0 4593 509.29 509.29'
+);
+
+section {
+	padding: 3em $base-side-padding;
+	&:first-of-type {
+		@extend %space-between;
+		@extend %flex;
+    	@extend %flex-wrap;
+	}
+}
+
+h1 {
+    font-size: 2.6em;
+    margin: 6% 0 1.5%;
+    &+p {
+    	@extend %font-bigger;
+    }
+}
+
+.main-title {
+	flex: 1 0 68%;
+	@media (max-width: 992px) {	flex-basis: 100%; }
+}
+
+[role="banner"] {
+	& + ul {
+		a {
+			padding: 0 2em;
+			@extend %text-center;
+			@extend %inline-block;
+			@extend %base-button-height;
+			@include rounded_element($border: "", $radius: 10px, $background: "", $color: "");
+		}
+	}
+}
+
+//Aside navigation
+.categories {
+	font-size: 0.85em;
+	flex: 1 0 32%;
+    @extend %text-center;
+	ul {
+		@media (min-width: 993px) { margin-top: 0; }
+		@extend %flex;
+    	@extend %flex-wrap;
+    	@extend %space-between;
+	}
+	li {
+		width: 33%;
+		min-width: 80px;
+		@media (max-width: 992px) {	width: 20%; }
+		@extend %inline-block;
+		&::before {
+    		content: '';
+    		width: 4.8em;
+    		height: 4.8em;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		@extend %inline-block;
+    	}
+	}
+	p {
+		height: 1em;
+		margin: 0.6em 0 3em;
+	}
+}
+
+@each $fragment, $viewbox in $sprite-map {
+    .#{$fragment} {
+    	&::before {
+    		background-image: url("../img/categories.svg#svgView(viewBox(#{$viewbox}))");
+    	}
+    }
+}
+
+//Search
+.search-container {
+	padding-top: 0;
+    padding-bottom: 0;
+	&::before {
+		content: url('data:image/svg+xml;utf8,#{$double-arrow}');
+		top: -3.8em;
+		@extend %pos-rel;
+	}
+	@extend %text-center;
+	p {
+		@extend %font-bigger;
+	}
+	input {
+	    width: 39%;
+        min-width: 200px;
+	    margin: 0.6em 1%;
+	    transition: width .2s ease-in-out;
+	    &:focus {
+	    	width: 50%;
+	    }
+	}
+	.yellow {
+		border: 1px solid $yellow;
+	}
+}
+
+//Other ads
+.last-ads {
+	@extend %other-ads;
+	ul {
+		@extend %space-between;
+		@extend %m0;
+		@extend %flex;
+		@extend %flex-wrap;
+	}
+	li {
+		flex: 1 0 30%;
+		min-width: 300px;
+		padding: 1.6% 0;
+		@media (max-width: 480px) {	min-width: 100%; }
+	}
+	img {
+	    max-width: 43%;
+		margin-right: 4.5%;
+		@extend %float-left;
+	}
+	h2 {
+		top: -0.25em;
+		@extend %m0;
+		@extend %pos-rel;
+	}
+	figcaption {
+		padding-right: 2.5%;
+	}
+}
+
+.violet {
+	margin-right: 1em;
+	@extend %float-left;
+}
+
+.yellow {
+	color: inherit;
+}
+
+.socials {
+	position: fixed;
+	top: 11%;
+	right: 0;
+	width: 3em;
+	background: url(../img/socials_squared.png) no-repeat 0 0/100%;
+	li {
+		height: 3em;
+		@extend %pos-rel;
+	}
+	a {
+		@extend %pos-abs;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
