@@ -1,5 +1,11 @@
 @import "_tools";
 
+$sprite-map: (
+	vk: '0 -1 101 101',
+	fb: '0 105 101 101',
+	gp: '0 210 101 101'
+);
+
 .decore {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -50,7 +56,9 @@ a.violet {
 		}
 	}
 	a {
-		background: url(../img/icons_sprite.svg) no-repeat center top/cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: cover;
 		width: 3em;
 		height: 3em;
 		border-radius: 50%;
@@ -59,10 +67,8 @@ a.violet {
 	}
 }
 
-.fb a {
-	background-position-y: 50%;
-}
-
-.gp a {
-	background-position-y: 100%;
+@each $fragment, $viewbox in $sprite-map {
+    .#{$fragment} a {
+    	background-image: url("../img/icons_sprite.svg#svgView(viewBox(#{$viewbox}))");
+    }
 }

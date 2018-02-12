@@ -4,11 +4,11 @@
 -webkit-box-sizing: border-box;
         box-sizing: border-box;
     &::-moz-selection {
-	background: $login_bg;
+	background: $violet;
     color: white;
 	}
     &::selection {
-	background: $login_bg;
+	background: $violet;
     color: white;
 	}
 	img::-moz-selection {
@@ -120,5 +120,7 @@ figure {
 .price {
     font-size: 2em;
     line-height: 0.8;
+    margin-left: 10px;
 	@extend %float-right;
+	@extend %inline-block;
 }

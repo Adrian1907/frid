@@ -25,6 +25,10 @@ $base-side-padding: 7%;
 
 %font-bigger { font-size: 120%; }
 
+%break-all {
+	word-break: break-all;
+}
+
 %inline-block {	display: inline-block; }
 
 %block { display: block; }
@@ -125,6 +129,7 @@ $base-side-padding: 7%;
 		font-weight: 400;
 		@extend %m0;
 		@extend %inline-block;
+		@extend %break-all;
 	}
 	figcaption {
 		@media (min-width : 768px) {

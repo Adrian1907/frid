@@ -1,17 +1,5 @@
 @import "_main";
 
-$double-arrow: '<svg xmlns="http://www.w3.org/2000/svg" width="44" height="35" viewBox="0 0 358 324">' + 
-	'<defs>' +
-	'<linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="700" x3="44">' +
-	'<stop offset="0" stop-color="#{$violet}"/>' +
-	'<stop offset="1" stop-color="#{$yellow}"/>' +
-	'</linearGradient>' +
-	'</defs>' +
-	'<g fill="url(#a)">' + 
-	'<path d="M-4 99l-21 21 204 203 203-203-21-21-182 181z"/>' + 
-	'<path d="M-4 0l-21 21 204 203L382 21 361 0 179 182z"/>' + 
-	'</g></svg>';
-
 $sprite-map: (
 	real_estate: '0 0 509.29 509.29',
 	transport: '0 510 509.29 509.29',
@@ -48,6 +36,10 @@ h1 {
 }
 
 [role="banner"] {
+	padding-right: 1.4em;
+	h1 {
+		@media (max-width: 480px) { font-size: 2em; }
+	}
 	& + ul {
 		a {
 			padding: 0 2em;
@@ -86,7 +78,8 @@ h1 {
 	}
 	p {
 		height: 1em;
-		margin: 0.6em 0 3em;
+		margin: 6% 0 3em;
+		@media (max-width : 767px) { margin-bottom: 31%; }
 	}
 }
 
@@ -103,7 +96,7 @@ h1 {
 	padding-top: 0;
     padding-bottom: 0;
 	&::before {
-		content: url('data:image/svg+xml;utf8,#{$double-arrow}');
+		content: url('../img/arrow-down-gradient.svg');
 		top: -3.8em;
 		@extend %pos-rel;
 	}
@@ -165,6 +158,7 @@ h1 {
 }
 
 .socials {
+	@media (max-width: 480px) { opacity: 0.75; }
 	position: fixed;
 	top: 11%;
 	right: 0;
@@ -181,4 +175,8 @@ h1 {
 		left: 0;
 		right: 0;
 	}
+}
+
+@media (max-width: 480px) {
+	[role="banner"] + ul a, .yellow { padding: 0 1em; }
 }
