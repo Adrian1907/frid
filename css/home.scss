@@ -177,6 +177,8 @@ h1 {
 	}
 }
 
+@media (max-width: 992px) { .logo img { height: 2.2em; } }
+
 @media (max-width: 480px) {
 	[role="banner"] + ul a, .yellow { padding: 0 1em; }
 }
