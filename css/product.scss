@@ -109,11 +109,12 @@ header {
 	    	height: 0.6em;
 		    margin-left: 5px;
 	    	@extend %inline-block;
-	    	@include rounded_element($border: '', $radius: 50%, $background: $fail_color + #011111, $color: "");
+	    	@include rounded_element($border: '', $radius: 50%, $background: lighten($fail_color,11%), $color: "");
 	    }
 	    &.online {
 	    	&::after {
-	    		background: $success_color + #011111;
+	    		// background: $success_color + #011111;
+	    		background: lighten($success_color,11%);
 	    	}
 	    }
 	}
