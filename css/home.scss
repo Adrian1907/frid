@@ -1,6 +1,6 @@
 @import "_main";
 
-$sprite-map: (
+/*$sprite-viewbox-map: (
 	real_estate: '0 0 509.29 509.29',
 	transport: '0 510 509.29 509.29',
 	electronics: '0 1020 509.29 509.29',
@@ -11,6 +11,19 @@ $sprite-map: (
 	pets: '0 3570 512 512',
 	household_goods: '0 4083 509.29 509.29',
 	goods_for_kids: '0 4593 509.29 509.29'
+);*/
+
+$sprite-position-y-map: (
+	real_estate: '0',
+	transport: '-4.8em',
+	electronics: '-9.6em',
+	work: '-14.4em',
+	services: '-19.21em',
+	sport: '-24em',
+	clothes: '-28.8em',
+	pets: '-33.59em',
+	household_goods: '-38.42em',
+	goods_for_kids: '100%'
 );
 
 section {
@@ -71,6 +84,7 @@ h1 {
     		content: '';
     		width: 4.8em;
     		height: 4.8em;
+    		background-image: url("../img/categories.svg");
     		background-repeat: no-repeat;
     		background-size: cover;
     		@extend %inline-block;
@@ -83,10 +97,19 @@ h1 {
 	}
 }
 
-@each $fragment, $viewbox in $sprite-map {
+//Not supported in Safari :(
+/*@each $fragment, $viewbox in $sprite-viewbox-map {
     .#{$fragment} {
     	&::before {
     		background-image: url("../img/categories.svg#svgView(viewBox(#{$viewbox}))");
+    	}
+    }
+}*/
+
+@each $fragment, $position-y in $sprite-position-y-map {
+    .#{$fragment} {
+    	&::before {
+    		background-position-y: #{$position-y};
     	}
     }
 }

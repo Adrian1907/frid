@@ -1,9 +1,15 @@
 @import "_tools";
 
-$sprite-map: (
+/*$sprite-map: (
 	vk: '0 -1 101 101',
 	fb: '0 105 101 101',
 	gp: '0 210 101 101'
+);*/
+
+$sprite-position-map: (
+	vk: '0',
+	fb: '50%',
+	gp: '100%'
 );
 
 .decore {
@@ -56,6 +62,7 @@ a.violet {
 		}
 	}
 	a {
+		background-image: url("../img/icons_sprite.svg");
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-size: cover;
@@ -67,8 +74,15 @@ a.violet {
 	}
 }
 
-@each $fragment, $viewbox in $sprite-map {
+//Not supported in Safari :(
+/*@each $fragment, $viewbox in $sprite-map {
     .#{$fragment} a {
     	background-image: url("../img/icons_sprite.svg#svgView(viewBox(#{$viewbox}))");
+    }
+}*/
+
+@each $fragment, $position-y in $sprite-position-map {
+    .#{$fragment} a {
+    	background-position-y: #{$position-y};
     }
 }
