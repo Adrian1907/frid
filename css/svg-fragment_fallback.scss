@@ -1,0 +1,24 @@
+$sprite-position-y-map: (
+	real_estate: '0',
+	transport: '-4.8em',
+	electronics: '-9.6em',
+	work: '-14.4em',
+	services: '-19.21em',
+	sport: '-24em',
+	clothes: '-28.8em',
+	pets: '-33.59em',
+	household_goods: '-38.42em',
+	goods_for_kids: '100%'
+);
+
+@each $fragment, $position-y in $sprite-position-y-map {
+    .#{$fragment} {
+    	&::before {	background-position-y: #{$position-y}; }
+    }
+}
+
+.categories {
+	li::before {
+		background-image: url("../img/categories_fallback.svg");
+	}
+}

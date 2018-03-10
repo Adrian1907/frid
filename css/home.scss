@@ -58,8 +58,6 @@ h1 {
     		content: '';
     		width: 4.8em;
     		height: 4.8em;
-    		background-image: url("../img/categories.svg");
-    		background-repeat: no-repeat;
     		background-size: cover;
     		@extend %inline-block;
     	}
@@ -71,8 +69,7 @@ h1 {
 	}
 }
 
-//Not supported in Safari :(
-/*$sprite-viewbox-map: (
+$sprite-viewbox-map: (
 	real_estate: '0 0 509.29 509.29',
 	transport: '0 510 509.29 509.29',
 	electronics: '0 1020 509.29 509.29',
@@ -87,28 +84,9 @@ h1 {
 
 @each $fragment, $viewbox in $sprite-viewbox-map {
     .#{$fragment} {
-    	&::before {
+    	&:before {
     		background-image: url("../img/categories.svg#svgView(viewBox(#{$viewbox}))");
     	}
-    }
-}*/
-
-$sprite-position-y-map: (
-	real_estate: '0',
-	transport: '-4.8em',
-	electronics: '-9.6em',
-	work: '-14.4em',
-	services: '-19.21em',
-	sport: '-24em',
-	clothes: '-28.8em',
-	pets: '-33.59em',
-	household_goods: '-38.42em',
-	goods_for_kids: '100%'
-);
-
-@each $fragment, $position-y in $sprite-position-y-map {
-    .#{$fragment} {
-    	&::before {	background-position-y: #{$position-y}; }
     }
 }
 
