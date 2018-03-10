@@ -6,7 +6,7 @@ section {
 
 .hints {
 	max-width: 36%;
-	min-width: 275px;
+	min-width: 262px;
     margin: 1em auto;
     height: 3.5em;
     @extend %base-button-height;
@@ -26,7 +26,7 @@ section {
 		background: url(../img/done.svg) no-repeat center/cover;
 		width: 22px;
 	    height: 22px;
-	    margin: 0 10px -0.4em 0;
+	    margin: 0 2.45% -0.4em 0;
 	    @extend %inline-block;
 	}
 }
@@ -109,5 +109,8 @@ aside {
 			content: " *";
 			color: $fail_color;
 		}
+	}
+	input {
+		box-shadow: inset 0px 1px 3px 0px $fail_color;
 	}
 }

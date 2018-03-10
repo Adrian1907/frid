@@ -79,17 +79,16 @@ header {
 		bottom: 0;
 	}
 
-	  &.active {
+	&.active {
+		&:before {
+			box-shadow: none;
+			top: 50%;
+			transform: rotate(225deg);
+		}
 
-	    &:before {
-	      box-shadow: transparent 0 0 0 0;
-	      top: 50%;
-	      transform: rotate(225deg);
-	    }
-
-	    &:after {
-	      top: 50%;
-	      transform: rotate(315deg);
-	    }
-	  }
+		&:after {
+			top: 50%;
+			transform: rotate(315deg);
+		}
+	}
  }
